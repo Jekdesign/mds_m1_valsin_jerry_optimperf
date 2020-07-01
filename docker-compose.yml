@@ -1,0 +1,57 @@
+version: "2"
+
+services:
+  backend:
+    container_name: server
+    build: backend
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mongoset1
+    environment:
+      MONGODB_URI: mongodb+srv://jech:jech@cluster0-3zvcc.mongodb.net/mds?retryWrites=true&w=majority
+  mongoset1:
+    hostname: mongoset1
+    container_name: localmongoset1
+    image: mongo:latest
+    expose:
+      - 27017
+    ports:
+      - 27017:27017
+    restart: always
+    entrypoint: ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0"]
+    environment:
+      MONGO_URI: mongodb+srv://jech:jech@cluster0-3zvcc.mongodb.net/mds?retryWrites=true&w=majority
+      # MONGO_URI: mongodb://localhost:27017/mds
+  mongoset2:
+    hostname: mongoset2
+    container_name: localmongoset2
+    image: mongo:latest
+    expose:
+      - 27018
+    ports:
+      - 27018:27018
+    restart: always
+    entrypoint: ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0"]
+    environment:
+      MONGO_URI: mongodb+srv://jech:jech@cluster0-3zvcc.mongodb.net/mds?retryWrites=true&w=majority
+      # MONGO_URI: mongodb://localhost:27018/mds
+  mongoset3:
+    hostname: mongoset3
+    container_name: localmongoset3
+    image: mongo:latest
+    expose:
+      - 27019
+    ports:
+      - 27019:27019
+    restart: always
+    entrypoint: ["/usr/bin/mongod", "--bind_ip_all", "--replSet", "rs0"]
+    environment:
+      MONGO_URI: mongodb+srv://jech:jech@cluster0-3zvcc.mongodb.net/mds?retryWrites=true&w=majority
+      # MONGO_URI: mongodb://localhost:27019/mds
+
+  frontend:
+    container_name: client
+    build: frontend
+    ports:
+      - "3000:3000"

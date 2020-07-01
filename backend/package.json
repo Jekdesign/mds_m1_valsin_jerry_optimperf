@@ -1,0 +1,28 @@
+{
+  "name": "mds_m1_valsin_jerry_optimperf",
+  "version": "1.0.0",
+  "description": "Projet Optimisation et Performance avec une API REST et un cluster MongoDBAtlas dans le Cloud et en local - ​MyDigitalSchool",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jekdesign/mds_m1_valsin_jerry_optimperf.git"
+  },
+  "author": "jech dsgn",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Jekdesign/mds_m1_valsin_jerry_optimperf/issues"
+  },
+  "homepage": "https://github.com/Jekdesign/mds_m1_valsin_jerry_optimperf#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "mongoose": "^5.9.20"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

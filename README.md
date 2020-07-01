@@ -81,4 +81,3 @@ Connection db `mongodb://mongodb:27017/mds` or `link Mongo ATLAS`
 Backend port `https://localhost:8080`
 
 Client access `https://localhost:3000`
-# mds_m1_valsin_jerry_optimperf
